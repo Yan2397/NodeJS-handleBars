@@ -1,0 +1,28 @@
+{{> navBar}}
+
+<div class="userProfileCont">
+    <img src="http://localhost:8000/photo/{{x.picUrl}}" width="150px" height="150px"
+        style="border-radius: 50%;margin-left:50px" />
+    <div class="userName">
+        <p>Name: {{x.name}} </p>
+        <p>Surname: {{x.surname}}</p>
+        <form action="/uploadPicUrl" method="post" enctype="multipart/form-data">
+            <input type='file' name='picUrl' />
+            <button class="changeUsPhotoBtn">Change Photo</button>
+        </form>
+        <a class="seeUserPhoto" href="/user_photos?id={{x.id}}">See Photos</a>
+    </div>
+</div>
+
+
+<div class="back">
+    {{#each temp}}
+    <div class="prod">
+        <img src="http://localhost:8000/photo/{{picUrl}}" width="150px" height="150px" />
+        <h1>{{name}} {{surname}}</h1>
+        <form action="/deleteFriend?id={{id}}" method="post">
+            <button class="delBtn">Delete Friend</button>
+        </form>
+    </div>
+    {{/each}}
+</div>

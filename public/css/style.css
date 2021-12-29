@@ -1,0 +1,331 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+body {
+    background-color: #d3d1d1;
+}
+
+header {
+    position: sticky;
+    top: 0;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+}
+
+#Pending {
+    background-color: #6fa5f5;
+}
+
+#Approved {
+    background-color: #1b991b;
+}
+
+#Edit {
+    background-color: #991a09;
+}
+
+.profNav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #4e2e80;
+    width: 100vw;
+    height: 120px;
+}
+
+.log-reg {
+    position: sticky;
+    top: 0;
+    background-color: #4e2e80;
+    width: 100vw;
+    height: 120px;
+}
+
+.profileNavs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.profNavA {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navBarA {
+    color: #1b991b;
+    font-size: 18px;
+}
+
+.log-reg {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.in-log-reg {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.a1 {
+    font-size: 22px;
+    color: #fff;
+}
+
+.back {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-column-gap: 20px;
+    grid-row-gap: 50px;
+    grid-template-columns: auto auto auto auto auto;
+    padding: 10px;
+}
+
+.prod {
+    border: 2px solid #8f8e8e;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 310px;
+    max-width: 220px;
+    max-height: 350px;
+}
+
+.loginBtn {
+    background-color: #1b991b;
+    color: #fff;
+    width: 120px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.rejBtn {
+    background-color: #991e08;
+    color: #fff;
+    width: 120px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.cancBtn {
+    background-color: #c97c08;
+    color: #fff;
+    width: 120px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.addBtn {
+    background-color: #4087f1;
+    color: #fff;
+    width: 120px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.login-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 350px;
+    height: 170px;
+    border: 2px solid #8f8e8e;
+    border-radius: 5px;
+    margin-bottom: 150px;
+}
+
+.regForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 350px;
+    height: 370px;
+    border: 2px solid #8f8e8e;
+    border-radius: 5px;
+    margin-bottom: 100px;
+}
+
+.LoginInp {
+    width: 300px;
+    height: 30px;
+    border: 2px solid #8f8e8e;
+    border-radius: 5px;
+    outline: none;
+}
+
+.LoginInp::placeholder,
+.logInp::placeholder {
+    padding-left: 5px;
+}
+
+.logInp {
+    border: 2px solid #8f8e8e;
+    border-radius: 5px;
+    outline: none;
+    height: 25px;
+    width: 200px;
+}
+
+
+.userProfileCont {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.userName {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.seeUserPhoto {
+    width: 120px;
+    height: 25px;
+    background-color: #1b991b;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.changeUsPhotoBtn {
+    width: 150px;
+    height: 30px;
+    background-color: #4087f1;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.prodContMain {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: flex-start;
+    width: 100vw;
+}
+
+.prodForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    top: 120px;
+    height: 400px;
+    background-color: #4087f1;
+    border-radius: 5px;
+    border: none;
+}
+
+.addProdBtn {
+    background-color: #1b991b;
+    color: #fff;
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.minusBtn {
+    background-color: #991e08;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    margin-right: 10px;
+
+}
+
+.plusBtn {
+    background-color: #1b991b;
+    font-size: 20px;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.d1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rejBtn1 {
+    background-color: #991e08;
+    color: #fff;
+    width: 160px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.table-dark{
+    width: 100%;
+    background-color: #32383e;
+}
+
+th,td{
+    color: #fff;
+    text-align: center;
+    border-top: 1px solid #d3d1d1;
+    border-collapse: collapse;
+    padding: 10px 0;
+}
+th{
+    padding: 20px 0;
+    font-size: 25px;
+}

@@ -1,0 +1,42 @@
+{{> navBar}}
+
+<div class="userProfileCont">
+    <img src="http://localhost:8000/photo/{{x.picUrl}}" width="150px" height="150px" style="border-radius: 50%;margin-left:50px" />
+    <div class="userName">
+        <p>Name: {{x.name}} </p>
+        <p>Surname: {{x.surname}}</p>
+    <form  action="/uploadPicUrl" method="post" enctype="multipart/form-data">
+        <input type='file' name='picUrl' />
+        <button class="changeUsPhotoBtn">Change Photo</button>
+    </form>
+        <a class="seeUserPhoto" href="/user_photos?id={{x.id}}">See Photos</a>
+    </div>
+</div>
+
+
+<div class="back">
+    {{#each temp}}
+    {{#if status}}
+    <div class="prod">
+        <img src="http://localhost:8000/photo/{{product_photos.0.dataValues.picUrl}}" width="100%" height="150px" />
+        <h1>{{name}}</h1>
+        <h5>{{description}}</h5>
+        <h4>${{price}}</h4>
+        {{#if liked}}
+        <form action="/removeFromFavorite?id={{id}}" method="post">
+            <button style="background-color: transparent;border:none; outline:none"><i class='fas fa-heart' style='font-size:24px; color:#e20618'></i></button>
+        </form>
+{{else}}
+        <form action="/addToFavorite?id={{id}}" method="post">
+            <button style="background-color: transparent;border:none; outline:none"><i class='far fa-heart' style='font-size:24px; color:#e20618'></i></button>
+        </form>
+        {{/if}}
+
+        <form action="/addToCard?id={{id}}" method="post">
+            <button class="loginBtn">Add to Card</button>
+        </form>
+        <a href="/aboutProduct?id={{id}}">See more Details</a>
+    </div>
+    {{/if}}
+    {{/each}}
+</div>

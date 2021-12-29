@@ -1,0 +1,10 @@
+{{> navBar}}
+
+<div>
+    <h1>{{prod.name}}</h1>
+    <h1>{{prod.description}}</h1>
+    <h1>${{prod.price}}</h1>
+    {{#each prodPhotos}}
+        <img src="http://localhost:8000/photo/{{picUrl}}" width="170px" height="120px"/>
+    {{/each}}
+</div>

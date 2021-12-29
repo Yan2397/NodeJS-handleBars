@@ -1,0 +1,53 @@
+{{> navBar}}
+
+<div class="userProfileCont">
+    <img src="http://localhost:8000/photo/{{x.picUrl}}" width="150px" height="150px"
+        style="border-radius: 50%;margin-left:50px" />
+    <div class="userName">
+        <p>Name: {{x.name}} </p>
+        <p>Surname: {{x.surname}}</p>
+        <form action="/uploadPicUrl" method="post" enctype="multipart/form-data">
+            <input type='file' name='picUrl' />
+            <button class="changeUsPhotoBtn">Change Photo</button>
+        </form>
+        <a class="seeUserPhoto" href="/user_photos?id={{x.id}}">See Photos</a>
+    </div>
+</div>
+
+<div class="prodContMain">
+
+    <form action="/addNewProduct" method="post" enctype="multipart/form-data" class="prodForm">
+    <h1>Add Product</h1>
+        <input class="LoginInp" placeholder="name" name="name" type="text" />
+        <input class="LoginInp" placeholder="description" name="description" type="text" />
+        <input class="LoginInp" placeholder="price" name="price" type="number" min="1" />
+        <input class="LoginInp" placeholder="count" name="count" type="number" min="1" />
+        <select class="LoginInp" name="categoryId">
+            <option>Select Category*</option>
+            {{#each cats}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <input class="LoginInp" type='file' name='picUrl' multiple />
+
+        <button class="addProdBtn">Add New Product</button>
+    </form>
+
+    <div class="back">
+        {{#each usProd}}
+       
+        <div id='{{style}}' class="prod">
+            <img src="http://localhost:8000/photo/{{product_photos.0.dataValues.picUrl}}" width="200px"
+                height="150px" />
+
+
+            <h1>{{name}}</h1>
+            <h2>Desc: {{description}}</h2>
+            <h3>Count: {{count}}</h3>
+            <h3>Price: ${{price}}</h3>
+            <h3>{{style}}</h3>
+        </div>
+        {{/each}}
+    </div>
+
+</div>

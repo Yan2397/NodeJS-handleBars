@@ -1,0 +1,41 @@
+{{#if x.role}}
+    {{> adminNavBar}}
+{{else}}
+    {{> navBar}}
+{{/if}}
+<div class="userProfileCont">
+    <img src="http://localhost:8000/photo/{{x.picUrl}}" width="150px" height="150px" style="border-radius: 50%;margin-left:50px" />
+    <div class="userName">
+        <p>Name: {{x.name}} </p>
+        <p>Surname: {{x.surname}}</p>
+    <form  action="/uploadAdminPicUrl" method="post" enctype="multipart/form-data">
+        <input type='file' name='picUrl' />
+        <button class="changeUsPhotoBtn">Change Photo</button>
+    </form>
+        <a class="seeUserPhoto" href="/admin_photos?id={{x.id}}">See Photos</a>
+    </div>
+</div>
+
+{{!-- <div>
+    <img src="http://localhost:8000/photo/{{x.picUrl}}" width="150px" height="150px" style="border-radius: 50%;"/>
+    <p>Name: {{x.name}} </p>
+    <p>Surname: {{x.surname}}</p>
+     <form action="/uploadAdminPicUrl" method="post" enctype="multipart/form-data">
+        <input type='file' name='picUrl'/>
+        <button>Change Photo</button>
+        <a href="/admin_photos?id={{x.id}}">See Photos</a>
+    </form>
+</div> --}}
+
+<div>
+    <img src="http://localhost:8000/photo/{{user.picUrl}}" width="200px"/>
+    <div>
+        <h1>Name: {{user.name}}</h1>
+        <h1>Surname: {{user.surname}}</h1>
+        <h1>Age: {{user.age}}</h1>
+        {{#each user.user_photos}}
+            <img src="http://localhost:8000/photo/{{dataValues.picUrl}}" width="220px" height="150px"/>
+        {{/each}}
+    </div>
+</div>
+

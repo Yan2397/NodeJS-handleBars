@@ -1,0 +1,13 @@
+{{#if us.role}}
+    {{> adminNavBar}}
+{{else}}
+    {{> navBar}}
+{{/if}}
+
+<div>
+    {{#each temp}}
+        <img src="http://localhost:8000/photo/{{picUrl}}" width="150px" height="150px"/>
+        <h1>{{name}} {{surname}}</h1>
+        
+    {{/each}}
+</div>

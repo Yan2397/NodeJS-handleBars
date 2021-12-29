@@ -1,0 +1,51 @@
+{{> navBar}}
+
+<div class="userProfileCont">
+    <img src="http://localhost:8000/photo/{{x.picUrl}}" width="150px" height="150px"
+        style="border-radius: 50%;margin-left:50px" />
+    <div class="userName">
+        <p>Name: {{x.name}} </p>
+        <p>Surname: {{x.surname}}</p>
+        <form action="/uploadPicUrl" method="post" enctype="multipart/form-data">
+            <input type='file' name='picUrl' />
+            <button class="changeUsPhotoBtn">Change Photo</button>
+        </form>
+        <a class="seeUserPhoto" href="/user_photos?id={{x.id}}">See Photos</a>
+    </div>
+</div>
+
+
+
+<div class="back">
+    {{#each temp}}
+    <div class="prod">
+
+        <img src="http://localhost:8000/photo/{{picUrl}}" width="150px" height="150px" style="border-radius: 50%;" />
+
+        <h2><a href="/showUs?id={{id}}">Name: {{name}}</a></h2>
+        <h2>Surname: {{surname}}</h2>
+        <h3>Age: {{age}} years</h3>
+        <h3>Email: {{email}}</h3>
+        {{#if fr}}
+        <form action="/deleteFriend?id={{id}}" method="post">
+            <button class="delBtn">Delete Friend</button>
+        </form>
+        {{else if myReq}}
+        <form action="/cancelRequest?id={{id}}" method="post">
+            <button class="cancBtn">Cancel Request</button>
+        </form>
+        {{else if myFr}}
+        <form action="/acceptFriend?id={{id}}" method="post">
+            <button class="loginBtn">Accept</button>
+        </form>
+        <form action="/rejectFriend?id={{id}}" method="post">
+            <button class="rejBtn">Reject</button>
+        </form>
+        {{else}}
+        <form action="/addFriend?id={{id}}" method="post">
+            <button class="addBtn">Add Friend</button>
+        </form>
+        {{/if}}
+    </div>
+    {{/each}}
+</div>

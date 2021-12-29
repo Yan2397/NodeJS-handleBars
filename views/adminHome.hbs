@@ -1,0 +1,24 @@
+{{> adminNavBar}}
+
+<div class="userProfileCont">
+    <img src="http://localhost:8000/photo/{{x.picUrl}}" width="150px" height="150px" style="border-radius: 50%;"/>
+    <div class="userName">
+    <p>Name: {{x.name}} </p>
+    <p>Surname: {{x.surname}}</p>
+     <form action="/uploadAdminPicUrl" method="post" enctype="multipart/form-data">
+        <input type='file' name='picUrl'/>
+        <button class="changeUsPhotoBtn">Change Photo</button>
+    </form>
+    </div>
+</div>
+
+<div class="back">
+    {{#each temp}}
+            <div class="prod">
+                <img src="http://localhost:8000/photo/{{product_photos.0.dataValues.picUrl}}" width="220px" height="150px"/>
+                <h1>{{name}}</h1>
+                <h3>{{description}}</h3>
+                <h3>${{price}}</h3>
+            </div>
+    {{/each}}
+</div>

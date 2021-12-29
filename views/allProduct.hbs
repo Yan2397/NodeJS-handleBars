@@ -1,0 +1,15 @@
+{{>logReg}}
+<div class="back">
+    {{#each temp}}
+        <div class="prod">
+            <img src="http://localhost:8000/photo/{{product_photos.0.dataValues.picUrl}}" width="100%" height="150px"/>
+
+            <h1>{{name}}</h1>
+            <h5>Desc: {{description}}</h5>
+            <h3>Price: ${{price}}</h3>
+            <form action="/addToCard?id={{id}}" method="post">
+                <button class="loginBtn">Add to Card</button>
+            </form>
+        </div>
+    {{/each}}
+</div>

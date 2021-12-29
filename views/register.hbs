@@ -1,0 +1,13 @@
+{{>logReg}}
+
+<div class="login-div">
+    <form action="/addNewUser" method="post" class="regForm">
+    <h1>Register</h1>
+        <input class="LoginInp" placeholder="name" name="name" type="text"/>
+        <input class="LoginInp" placeholder="surname" name="surname" type="text"/>
+        <input class="LoginInp" placeholder="age" name="age" type="number" min="0"/>
+        <input class="LoginInp" placeholder="email" name="email" type="text"/>
+        <input class="LoginInp" placeholder="password" name="password" type="password"/>
+        <button class="loginBtn">Register</button>
+    </form>
+</div>
